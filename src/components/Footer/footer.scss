@@ -1,0 +1,103 @@
+@import "../../assets/mixin/breakpoints";
+
+.footer {
+  display: flex;
+  gap: 2em;
+  font-size: 16px;
+  margin: 4em auto 2em;
+  padding: 0 1em;
+  max-width: 1200px;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+
+  @include breakpoints(820px) {
+    flex-direction: column;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+
+  li:first-child {
+    width: 50%;
+    @include lg {
+      width: auto;
+    }
+
+    @include breakpoints(820px) {
+      flex-direction: column;
+    }
+
+    .mob_app {
+      display: flex;
+      gap: 1em;
+      align-items: center;
+    }
+
+  }
+
+  &__text {
+    color: #fff;
+    opacity: .5;
+  }
+
+  .mobile {
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .apple {
+    background-image: url("../../assets/img/apple.png");
+  }
+
+  .google_play {
+    background-image: url("../../assets/img/google_play.png");
+  }
+
+  li:nth-child(2) {
+    a:first-child {
+      border-right: 1px solid #fff;
+      padding-right: 1em;
+    }
+  }
+
+  .social {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url("../../assets/img/social.png");
+    background-repeat: no-repeat;
+  }
+
+  .twitter {
+    background-position: 0 -5px;
+    background-size: cover;
+  }
+
+  .fb {
+    background-position: -45px 0;
+  }
+
+  .instagram {
+    background-position: -90px 0;
+  }
+
+  .link {
+    background-position: -135px 0;
+  }
+
+  a {
+    cursor: pointer;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

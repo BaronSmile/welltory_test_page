@@ -1,0 +1,94 @@
+@import '../../assets/mixin/breakpoints';
+
+.tariff {
+  margin-top: 70px;
+
+  &__title {
+    font-size: 22px;
+    text-align: center;
+    color: #fff;
+    font-weight: 400;
+  }
+}
+
+.table {
+  &__title {
+    font-size: 22px;
+    text-align: center;
+    margin: 45px 0 15px 0;
+    background-image: linear-gradient(45deg, #89A3FF 0%, #FF6060 5%, #FF6060 90%, #FFBF00 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+  }
+}
+
+.variant {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+  margin-top: 50px;
+  color: #fff;
+
+  li {
+    font-size: 22px;
+    padding-bottom: 15px;
+  }
+
+  @include md {
+    .other {
+      display: none;
+    }
+  }
+
+  @include sm{
+    gap: 10px;
+    padding-right: 1em;
+  }
+
+  @include breakpoints(570px){
+    padding-right: 5px;
+  }
+  @include breakpoints(455px){
+    padding-right: 0;
+  }
+
+  li:first-child {
+    flex-basis: 60%;
+    border-bottom: 1px solid #fff;
+
+    @include sm {
+
+    }
+  }
+
+  li:nth-child(2) {
+    border-bottom: 1px solid #fff;
+    padding: 0 1em;
+    @include sm {
+      padding: 0;
+    }
+  }
+
+  li:last-child {
+    position: relative;
+    padding: 0 1em;
+    @include sm {
+      padding: 0;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #89A3FF 0%, #FF6060 54.17%, #FFBF00 100%);
+    }
+  }
+
+}

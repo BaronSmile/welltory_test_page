@@ -1,0 +1,127 @@
+@import "../../assets/mixin/breakpoints";
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding-top: 2em;
+
+  @include breakpoints(820px) {
+    flex-direction: column;
+  }
+}
+
+.card {
+  background: rgba(51, 59, 74, 0.2);
+  padding: 0 2em 1em;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: 100%;
+
+  @include breakpoints(820px) {
+    width: auto;
+  }
+
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(91.33deg, #89A3FF 0%, #FF6060 54.17%, #FFBF00 100%);
+
+    & .card__footer {
+      opacity: 1;
+    }
+  }
+
+  &__tag {
+    position: relative;
+    top: -5%;
+    font-size: 18px;
+    width: min-content;
+    padding: 10px 1em;
+    border-radius: 0 5px 5px 5px;
+    @include breakpoints(820px) {
+      transform: translateY(-10px);
+    }
+  }
+
+  .blue {
+    background-color: #89A3FF;
+    color: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -7px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 9px 7px;
+      border-color: transparent transparent #89A3FF transparent;
+      opacity: .4;
+    }
+  }
+
+  .yellow {
+    background-color: #EFDD36;
+    color: #151A22;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -7px;
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 0 9px 7px;
+      border-color: transparent transparent #EFDD36 transparent;
+      opacity: .4;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
+    margin: 35px 0 20px 0;
+
+
+    .price {
+      display: flex;
+      flex-direction: column;
+
+      span:last-child {
+        font-size: 16px;
+        text-align: end;
+        text-decoration: line-through;
+        color: #C0C3CD;
+        opacity: 0.5;
+      }
+
+      .yellow_text {
+        color: #EFDD36
+      }
+
+      .blue_text {
+        color: #89A3FF;
+      }
+    }
+  }
+
+  &__name {
+    color: #fff;
+  }
+
+
+  &__footer {
+    font-size: 12px;
+    color: #fff;
+    opacity: .5;
+  }
+
+}

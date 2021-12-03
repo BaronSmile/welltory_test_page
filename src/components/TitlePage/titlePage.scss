@@ -1,0 +1,20 @@
+@import '../../assets/mixin/breakpoints';
+
+.first {
+  &__title {
+    img {
+      margin: 0 auto;
+
+      @include md{
+        display: none;
+      }
+    }
+
+    h2 {
+      font-size: 38px;
+      font-weight: 400;
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
